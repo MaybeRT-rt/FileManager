@@ -62,17 +62,14 @@
 		4A079D952AA8D9AF009976F8 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				4A079DB72AA9C462009976F8 /* AppDelegate */,
 				4A079DB32AA9BDB6009976F8 /* Protocol */,
 				4A079DAC2AA9B96F009976F8 /* Model */,
 				4A079DAD2AA9B976009976F8 /* View */,
 				4A079DAE2AA9B989009976F8 /* Controller */,
-				4A079D962AA8D9AF009976F8 /* AppDelegate.swift */,
-				4A079D982AA8D9AF009976F8 /* SceneDelegate.swift */,
-				4A079D9A2AA8D9AF009976F8 /* ViewController.swift */,
 				4A079D9F2AA8D9B0009976F8 /* Assets.xcassets */,
 				4A079DA12AA8D9B0009976F8 /* LaunchScreen.storyboard */,
 				4A079DA42AA8D9B0009976F8 /* Info.plist */,
-				4A079DAA2AA9B032009976F8 /* FileCell.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -96,6 +93,8 @@
 		4A079DAE2AA9B989009976F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4A079D9A2AA8D9AF009976F8 /* ViewController.swift */,
+				4A079DB62AA9C44A009976F8 /* Cell */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -106,6 +105,23 @@
 				4A079DB42AA9BDCE009976F8 /* FileModelDelegate.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4A079DB62AA9C44A009976F8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A079DAA2AA9B032009976F8 /* FileCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4A079DB72AA9C462009976F8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4A079D962AA8D9AF009976F8 /* AppDelegate.swift */,
+				4A079D982AA8D9AF009976F8 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

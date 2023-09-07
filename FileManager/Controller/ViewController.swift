@@ -16,6 +16,7 @@ class ViewController: UIViewController, FileModelDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         model.delegate = self
+        model.loadFilesFromDocuments()
         setupView()
         setupTableView()
     }
