@@ -16,6 +16,15 @@
 		4A079DB02AA9B9AA009976F8 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A079DAF2AA9B9AA009976F8 /* FileModel.swift */; };
 		4A079DB22AA9B9E6009976F8 /* FileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A079DB12AA9B9E6009976F8 /* FileView.swift */; };
 		4A079DB52AA9BDCE009976F8 /* FileModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A079DB42AA9BDCE009976F8 /* FileModelDelegate.swift */; };
+		4A079DBE2AAB94A2009976F8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A079DBD2AAB94A2009976F8 /* LoginModel.swift */; };
+		4A079DC02AAB94AE009976F8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A079DBF2AAB94AE009976F8 /* LoginView.swift */; };
+		4A079DC22AAB94C4009976F8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A079DC12AAB94C4009976F8 /* LoginController.swift */; };
+		4A22FA1C2AABD88E002219E9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22FA1B2AABD88E002219E9 /* TabBarController.swift */; };
+		4A22FA242AABDA47002219E9 /* PasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22FA232AABDA47002219E9 /* PasswordModel.swift */; };
+		4A22FA272AABDA91002219E9 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 4A22FA262AABDA91002219E9 /* KeychainAccess */; };
+		4A22FA292AABDAAE002219E9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22FA282AABDAAE002219E9 /* SettingsModel.swift */; };
+		4A22FA2B2AABDABE002219E9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22FA2A2AABDABE002219E9 /* SettingsController.swift */; };
+		4A22FA2D2AABDACD002219E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22FA2C2AABDACD002219E9 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,14 @@
 		4A079DAF2AA9B9AA009976F8 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		4A079DB12AA9B9E6009976F8 /* FileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileView.swift; sourceTree = "<group>"; };
 		4A079DB42AA9BDCE009976F8 /* FileModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModelDelegate.swift; sourceTree = "<group>"; };
+		4A079DBD2AAB94A2009976F8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		4A079DBF2AAB94AE009976F8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4A079DC12AAB94C4009976F8 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		4A22FA1B2AABD88E002219E9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4A22FA232AABDA47002219E9 /* PasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordModel.swift; sourceTree = "<group>"; };
+		4A22FA282AABDAAE002219E9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		4A22FA2A2AABDABE002219E9 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		4A22FA2C2AABDACD002219E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A22FA272AABDA91002219E9 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,10 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				4A079DB72AA9C462009976F8 /* AppDelegate */,
-				4A079DB32AA9BDB6009976F8 /* Protocol */,
-				4A079DAC2AA9B96F009976F8 /* Model */,
-				4A079DAD2AA9B976009976F8 /* View */,
-				4A079DAE2AA9B989009976F8 /* Controller */,
+				4A22FA2E2AABDAD7002219E9 /* TabBar */,
+				4A079DB92AAB9430009976F8 /* LoginMVC */,
+				4A079DB82AAB93E4009976F8 /* FileMVC */,
+				4A22FA1F2AABD9CF002219E9 /* SettingsMVC */,
 				4A079D9F2AA8D9B0009976F8 /* Assets.xcassets */,
 				4A079DA12AA8D9B0009976F8 /* LaunchScreen.storyboard */,
 				4A079DA42AA8D9B0009976F8 /* Info.plist */,
@@ -124,6 +142,94 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		4A079DB82AAB93E4009976F8 /* FileMVC */ = {
+			isa = PBXGroup;
+			children = (
+				4A079DB32AA9BDB6009976F8 /* Protocol */,
+				4A079DAC2AA9B96F009976F8 /* Model */,
+				4A079DAD2AA9B976009976F8 /* View */,
+				4A079DAE2AA9B989009976F8 /* Controller */,
+			);
+			path = FileMVC;
+			sourceTree = "<group>";
+		};
+		4A079DB92AAB9430009976F8 /* LoginMVC */ = {
+			isa = PBXGroup;
+			children = (
+				4A079DBA2AAB9478009976F8 /* Model */,
+				4A079DBB2AAB9482009976F8 /* View */,
+				4A079DBC2AAB948B009976F8 /* Controller */,
+			);
+			path = LoginMVC;
+			sourceTree = "<group>";
+		};
+		4A079DBA2AAB9478009976F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A079DBD2AAB94A2009976F8 /* LoginModel.swift */,
+				4A22FA232AABDA47002219E9 /* PasswordModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A079DBB2AAB9482009976F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A079DBF2AAB94AE009976F8 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A079DBC2AAB948B009976F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A079DC12AAB94C4009976F8 /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4A22FA1F2AABD9CF002219E9 /* SettingsMVC */ = {
+			isa = PBXGroup;
+			children = (
+				4A22FA222AABDA13002219E9 /* Model */,
+				4A22FA212AABDA06002219E9 /* View */,
+				4A22FA202AABD9F3002219E9 /* Controller */,
+			);
+			path = SettingsMVC;
+			sourceTree = "<group>";
+		};
+		4A22FA202AABD9F3002219E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A22FA2A2AABDABE002219E9 /* SettingsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4A22FA212AABDA06002219E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A22FA2C2AABDACD002219E9 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A22FA222AABDA13002219E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A22FA282AABDAAE002219E9 /* SettingsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A22FA2E2AABDAD7002219E9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4A22FA1B2AABD88E002219E9 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +246,9 @@
 			dependencies = (
 			);
 			name = FileManager;
+			packageProductDependencies = (
+				4A22FA262AABDA91002219E9 /* KeychainAccess */,
+			);
 			productName = FileManager;
 			productReference = 4A079D932AA8D9AF009976F8 /* FileManager.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +277,9 @@
 				Base,
 			);
 			mainGroup = 4A079D8A2AA8D9AF009976F8;
+			packageReferences = (
+				4A22FA252AABDA91002219E9 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 4A079D942AA8D9AF009976F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,13 +306,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A22FA2D2AABDACD002219E9 /* SettingsView.swift in Sources */,
 				4A079DB22AA9B9E6009976F8 /* FileView.swift in Sources */,
 				4A079D9B2AA8D9AF009976F8 /* ViewController.swift in Sources */,
+				4A22FA1C2AABD88E002219E9 /* TabBarController.swift in Sources */,
 				4A079DAB2AA9B032009976F8 /* FileCell.swift in Sources */,
+				4A079DC02AAB94AE009976F8 /* LoginView.swift in Sources */,
 				4A079DB02AA9B9AA009976F8 /* FileModel.swift in Sources */,
+				4A22FA242AABDA47002219E9 /* PasswordModel.swift in Sources */,
 				4A079D972AA8D9AF009976F8 /* AppDelegate.swift in Sources */,
+				4A079DBE2AAB94A2009976F8 /* LoginModel.swift in Sources */,
 				4A079DB52AA9BDCE009976F8 /* FileModelDelegate.swift in Sources */,
+				4A22FA2B2AABDABE002219E9 /* SettingsController.swift in Sources */,
 				4A079D992AA8D9AF009976F8 /* SceneDelegate.swift in Sources */,
+				4A079DC22AAB94C4009976F8 /* LoginController.swift in Sources */,
+				4A22FA292AABDAAE002219E9 /* SettingsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +528,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A22FA252AABDA91002219E9 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A22FA262AABDA91002219E9 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A22FA252AABDA91002219E9 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A079D8B2AA8D9AF009976F8 /* Project object */;
 }
