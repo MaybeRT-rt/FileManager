@@ -53,7 +53,6 @@ class LoginController: UIViewController {
         } else {
             print("Введен неверный пароль")
             // кейс с созданием нового пароля если забыл старый
-            
         }
     }
     
