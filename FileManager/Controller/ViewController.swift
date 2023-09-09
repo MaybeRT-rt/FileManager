@@ -70,7 +70,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as? FileCell else {
             return UITableViewCell()
         }
-        
         let fileURL = model.files[indexPath.row]
         cell.fileNameLabel.text = fileURL.lastPathComponent
         
