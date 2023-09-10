@@ -13,7 +13,7 @@ class FileCell: UITableViewCell {
     let fileNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16.0)
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
@@ -27,7 +27,7 @@ class FileCell: UITableViewCell {
     let fileSizeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 12.0)
+        label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .gray
         return label
     }()

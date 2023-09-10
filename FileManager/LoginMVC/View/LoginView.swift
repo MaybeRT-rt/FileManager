@@ -10,6 +10,14 @@ import UIKit
 
 class LoginView: UIView {
     
+    let label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Менеджер Фото"
+        label.font = UIFont.systemFont(ofSize: 24)
+        return label
+    }()
+    
     let passwordTextField: UITextField = {
         let passwdTF = UITextField()
         passwdTF.translatesAutoresizingMaskIntoConstraints = false
@@ -47,6 +55,7 @@ class LoginView: UIView {
     }
     
     private func setupView() {
+        addSubview(label)
         addSubview(stackView)
         stackView.addSubview(passwordTextField)
         stackView.addSubview(actionButton)

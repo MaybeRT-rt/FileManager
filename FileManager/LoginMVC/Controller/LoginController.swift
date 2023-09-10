@@ -27,9 +27,15 @@ class LoginController: UIViewController {
     }
     
     private func setupView() {
+        view.addSubview(loginView.label)
         view.addSubview(loginView.stackView)
         
         NSLayoutConstraint.activate([
+            
+            loginView.label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            loginView.label.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+           
+            
             loginView.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             loginView.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             loginView.stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 250),
