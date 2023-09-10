@@ -90,6 +90,5 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
 
 extension SettingsController: LoginControllerDelegate {
     func loginControllerDidFinishChangingPassword() {
-        // Добавьте обработку завершения изменения пароля, если необходимо
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Toast
 
 class LoginController: UIViewController {
     
@@ -52,7 +53,7 @@ class LoginController: UIViewController {
             isCreatingPassword = false
             updateButtonText()
         } else {
-            print("Новый пароль не удовлетворяет требованиям (например, меньше 4 символов)")
+            self.view.makeToast("Новый пароль не удовлетворяет требованиям (например, меньше 4 символов)")
         }
     }
     
@@ -63,8 +64,7 @@ class LoginController: UIViewController {
             let tabBarController = TabBarController()
             navigationController?.setViewControllers([tabBarController], animated: true)
         } else {
-            print("Введен неверный пароль")
-            // кейс с созданием нового пароля если забыл старый
+            self.view.makeToast("Введен неверный пароль")
         }
     }
     
@@ -75,7 +75,7 @@ class LoginController: UIViewController {
                 delegate?.loginControllerDidFinishChangingPassword()
                 dismiss(animated: true, completion: nil)
             } else {
-                print("пароль не совпадает или меньше 4 символов")
+                self.view.makeToast("пароль не совпадает или меньше 4 символов")
             }
         } else {
             loginView.passwordTextField.text = ""

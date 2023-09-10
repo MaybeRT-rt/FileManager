@@ -28,6 +28,7 @@
 		4AC6CB132AADF152003D0333 /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6CB122AADF152003D0333 /* PasswordManager.swift */; };
 		4AC6CB162AADF378003D0333 /* LoginControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6CB152AADF378003D0333 /* LoginControllerDelegate.swift */; };
 		4AC6CB1E2AAE1E91003D0333 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6CB1D2AAE1E91003D0333 /* ImageModel.swift */; };
+		4AC6CB212AAE6E97003D0333 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC6CB202AAE6E97003D0333 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC6CB212AAE6E97003D0333 /* Toast in Frameworks */,
 				4A22FA272AABDA91002219E9 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +275,7 @@
 			name = FileManager;
 			packageProductDependencies = (
 				4A22FA262AABDA91002219E9 /* KeychainAccess */,
+				4AC6CB202AAE6E97003D0333 /* Toast */,
 			);
 			productName = FileManager;
 			productReference = 4A079D932AA8D9AF009976F8 /* FileManager.app */;
@@ -304,6 +307,7 @@
 			mainGroup = 4A079D8A2AA8D9AF009976F8;
 			packageReferences = (
 				4A22FA252AABDA91002219E9 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				4AC6CB1F2AAE6E97003D0333 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 4A079D942AA8D9AF009976F8 /* Products */;
 			projectDirPath = "";
@@ -566,6 +570,14 @@
 				kind = branch;
 			};
 		};
+		4AC6CB1F2AAE6E97003D0333 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -573,6 +585,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A22FA252AABDA91002219E9 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		4AC6CB202AAE6E97003D0333 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AC6CB1F2AAE6E97003D0333 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

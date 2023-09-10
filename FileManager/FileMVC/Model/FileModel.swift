@@ -21,13 +21,10 @@ class FileModel {
         do {
             var fileURLs = try FileManager.default.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil, options: [])
             
-            // Получение текущего состояния переключателя сортировки
             let isSortingEnabled = SettingsModel.shared.isSortingEnabled
-            // Сортировка в алфавитном порядке, если переключатель активен
             if isSortingEnabled {
                 fileURLs = fileURLs.sorted(by: { $0.lastPathComponent < $1.lastPathComponent })
             } else {
-                // В противном случае сортировка в обратном порядке
                 fileURLs = fileURLs.sorted(by: { $0.lastPathComponent > $1.lastPathComponent })
             }
             
@@ -45,8 +42,8 @@ class FileModel {
         
         do {
             try FileManager.default.moveItem(at: currentFileURL, to: newFileURL)
-            files[index] = newFileURL // Обновляем массив файлов с новым URL
-            delegate?.filesUpdated() // Уведомляем делегата о изменениях
+            files[index] = newFileURL
+            delegate?.filesUpdated()
             print("Файл успешно переименован в: \(newFileURL)")
         } catch {
             print("Ошибка при переименовании файла: \(error)")
