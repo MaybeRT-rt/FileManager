@@ -10,6 +10,8 @@ import UIKit
 
 class LoginController: UIViewController {
     
+    weak var delegate: LoginControllerDelegate?
+    
     private let loginView = LoginView()
     private let loginModel = LoginModel()
     private let passwordModel = PasswordModel.shared
@@ -34,26 +36,35 @@ class LoginController: UIViewController {
         ])
     }
     
-    private func updateButtonText() {
-        if passwordModel.getPassword() != nil {
-            loginView.actionButton.setTitle("Введите пароль", for: .normal)
-            loginView.actionButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        } else {
+    func updateButtonText() {
+        if PasswordManager.shared.isPasswordCreationEnabled() {
             loginView.actionButton.setTitle("Создать пароль", for: .normal)
             loginView.actionButton.addTarget(self, action: #selector(createPasswordButtonTapped), for: .touchUpInside)
+        } else {
+            loginView.actionButton.setTitle("Введите пароль", for: .normal)
+            loginView.actionButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         }
     }
     
-    @objc func loginButtonTapped() {
+    @objc private func saveNewPasswordButtonTapped() {
+        if let newPassword = loginView.passwordTextField.text, newPassword.count >= 4 {
+            passwordModel.savePassword(newPassword)
+            isCreatingPassword = false
+            updateButtonText()
+        } else {
+            print("Новый пароль не удовлетворяет требованиям (например, меньше 4 символов)")
+        }
+    }
+    
+    @objc private func loginButtonTapped() {
         let enteredPassword = loginView.passwordTextField.text ?? ""
         
         if passwordModel.validatePassword(enteredPassword) {
-            let tabBarController = TabBarController() 
+            let tabBarController = TabBarController()
             navigationController?.setViewControllers([tabBarController], animated: true)
         } else {
             print("Введен неверный пароль")
             // кейс с созданием нового пароля если забыл старый
-            
         }
     }
     
@@ -61,8 +72,8 @@ class LoginController: UIViewController {
         if isCreatingPassword {
             if let password = loginView.passwordTextField.text, password.count >= 4 {
                 passwordModel.savePassword(password)
-                let tabBarController = TabBarController()
-                navigationController?.setViewControllers([tabBarController], animated: true)
+                delegate?.loginControllerDidFinishChangingPassword()
+                dismiss(animated: true, completion: nil)
             } else {
                 print("пароль не совпадает или меньше 4 символов")
             }

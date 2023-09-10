@@ -15,6 +15,13 @@ class SettingsView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    let sortingSwitch: UISwitch = {
+        let switchControl = UISwitch()
+        switchControl.translatesAutoresizingMaskIntoConstraints = false
+        switchControl.isOn = SettingsModel.shared.isSortingEnabled
+        return switchControl
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +38,7 @@ class SettingsView: UIView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }

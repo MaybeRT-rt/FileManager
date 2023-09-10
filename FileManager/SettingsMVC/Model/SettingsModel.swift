@@ -7,18 +7,29 @@
 
 import Foundation
 
-struct SettingsSection {
-    let title: String
-    var options: [SettingsOption]
-}
-
-struct SettingsOption {
-    let title: String
-    var isSelected: Bool
-}
-
 class SettingsModel {
-    var sections: [SettingsSection] = [SettingsSection(title: "Сортировка", options: [
-                SettingsOption(title: "По алфавиту", isSelected: true),
-                SettingsOption(title: "Обратный порядок", isSelected: false)])]
+    
+    static let shared = SettingsModel()
+    private let defaults = UserDefaults.standard
+    
+    private let sortingKey = "SortingKey"
+    
+    var isSortingEnabled: Bool {
+        get {
+            return defaults.bool(forKey: sortingKey)
+        }
+        set {
+            defaults.set(newValue, forKey: sortingKey)
+        }
+    }
+    
+    init() {
+        if defaults.object(forKey: sortingKey) == nil {
+            defaults.set(true, forKey: sortingKey)
+        }
+    }
+    
+    func setSortingEnabled(_ isEnabled: Bool) {
+        isSortingEnabled = isEnabled
+    }
 }
