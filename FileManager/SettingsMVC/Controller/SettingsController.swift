@@ -79,10 +79,10 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 1 {
-            PasswordManager.shared.startCreatingPassword()
             let loginController = LoginController()
+            PasswordModel.shared.savePassword(nil)
             loginController.delegate = self
-            loginController.modalPresentationStyle = .fullScreen // Установите стиль модальной презентации
+            loginController.modalPresentationStyle = .fullScreen
             present(loginController, animated: true, completion: nil)
         }
     }
@@ -90,6 +90,6 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
 
 extension SettingsController: LoginControllerDelegate {
     func loginControllerDidFinishChangingPassword() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
 }

@@ -29,6 +29,7 @@ class ViewController: UIViewController, FileModelDelegate {
     
     func setupView() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить фото", style: .plain, target: self, action: #selector(addPhotoButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .systemMint
         
         view.addSubview(tbView.tableView)
         
@@ -144,7 +145,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self?.showEditFileNameDialog(at: indexPath)
             completionHandler(true)
         }
-        editAction.backgroundColor = .systemBlue
+        editAction.backgroundColor = .systemMint
         
         return UISwipeActionsConfiguration(actions: [editAction])
     }

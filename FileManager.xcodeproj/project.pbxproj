@@ -28,7 +28,7 @@
 		4AC6CB162AADF378003D0333 /* LoginControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6CB152AADF378003D0333 /* LoginControllerDelegate.swift */; };
 		4AC6CB1E2AAE1E91003D0333 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6CB1D2AAE1E91003D0333 /* ImageModel.swift */; };
 		4AC6CB212AAE6E97003D0333 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC6CB202AAE6E97003D0333 /* Toast */; };
-		4AC6CB232AAF3119003D0333 /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6CB222AAF3119003D0333 /* PasswordManager.swift */; };
+		4AC6CB262AAFB1E2003D0333 /* ExtensionLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6CB252AAFB1E2003D0333 /* ExtensionLoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,7 @@
 		4A22FA2C2AABDACD002219E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4AC6CB152AADF378003D0333 /* LoginControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginControllerDelegate.swift; sourceTree = "<group>"; };
 		4AC6CB1D2AAE1E91003D0333 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
-		4AC6CB222AAF3119003D0333 /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
+		4AC6CB252AAFB1E2003D0333 /* ExtensionLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionLoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				4A079DC12AAB94C4009976F8 /* LoginController.swift */,
+				4AC6CB242AAFB1B0003D0333 /* Extension */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				4A22FA232AABDA47002219E9 /* PasswordModel.swift */,
-				4AC6CB222AAF3119003D0333 /* PasswordManager.swift */,
 			);
 			path = PasswordModel;
 			sourceTree = "<group>";
@@ -255,6 +255,14 @@
 				4AC6CB152AADF378003D0333 /* LoginControllerDelegate.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4AC6CB242AAFB1B0003D0333 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4AC6CB252AAFB1E2003D0333 /* ExtensionLoginVC.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AC6CB232AAF3119003D0333 /* PasswordManager.swift in Sources */,
 				4A22FA2D2AABDACD002219E9 /* SettingsView.swift in Sources */,
 				4A079DB22AA9B9E6009976F8 /* FileView.swift in Sources */,
 				4A079D9B2AA8D9AF009976F8 /* ViewController.swift in Sources */,
@@ -348,6 +355,7 @@
 				4A079D972AA8D9AF009976F8 /* AppDelegate.swift in Sources */,
 				4A079DBE2AAB94A2009976F8 /* LoginModel.swift in Sources */,
 				4A079DB52AA9BDCE009976F8 /* FileModelDelegate.swift in Sources */,
+				4AC6CB262AAFB1E2003D0333 /* ExtensionLoginVC.swift in Sources */,
 				4A22FA2B2AABDABE002219E9 /* SettingsController.swift in Sources */,
 				4AC6CB1E2AAE1E91003D0333 /* ImageModel.swift in Sources */,
 				4A079D992AA8D9AF009976F8 /* SceneDelegate.swift in Sources */,

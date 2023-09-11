@@ -13,11 +13,12 @@ class LoginController: UIViewController {
     
     weak var delegate: LoginControllerDelegate?
     
-    private let loginView = LoginView()
-    private let loginModel = LoginModel()
-    private let passwordModel = PasswordModel.shared
+    let loginView = LoginView()
+    let loginModel = LoginModel()
+    let passwordModel = PasswordModel.shared
     
     var isCreatingPassword = false
+    var confirmedPassword = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,14 @@ class LoginController: UIViewController {
     
     func testPass() {
         if passwordModel.getPassword() != nil {
-            isCreatingPassword = false
+            passwordModel.isCreatingPassword = false
         } else {
-            isCreatingPassword = true
+            passwordModel.startCreatingPassword()
         }
         
         updateButtonText()
     }
-        
+    
     private func setupView() {
         view.addSubview(loginView.label)
         view.addSubview(loginView.stackView)
@@ -51,55 +52,4 @@ class LoginController: UIViewController {
             loginView.stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
-    func updateButtonText() {
-        if PasswordManager.shared.isPasswordCreationEnabled() {
-            loginView.actionButton.setTitle("Создать пароль", for: .normal)
-            loginView.actionButton.addTarget(self, action: #selector(createPasswordButtonTapped), for: .touchUpInside)
-        } else {
-            loginView.actionButton.setTitle("Введите пароль", for: .normal)
-            loginView.actionButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        }
-    }
-    
-    @objc private func saveNewPasswordButtonTapped() {
-        if let newPassword = loginView.passwordTextField.text, newPassword.count >= 4 {
-            passwordModel.savePassword(newPassword)
-            isCreatingPassword = false
-            updateButtonText()
-            delegate?.loginControllerDidFinishChangingPassword()
-        } else {
-            self.view.makeToast("Новый пароль не удовлетворяет требованиям (например, меньше 4 символов)")
-        }
-    }
-    
-    @objc private func loginButtonTapped() {
-        let enteredPassword = loginView.passwordTextField.text ?? ""
-        if passwordModel.validatePassword(enteredPassword) {
-            let tabBarController = TabBarController()
-            navigationController?.setViewControllers([tabBarController], animated: true)
-            delegate?.loginControllerDidFinishChangingPassword()
-        } else {
-            self.view.makeToast("Введен неверный пароль")
-        }
-    }
-    
-    @objc private func createPasswordButtonTapped() {
-        if isCreatingPassword {
-            if let password = loginView.passwordTextField.text, password.count >= 4 {
-                passwordModel.savePassword(password)
-                let tabBarController = TabBarController()
-                navigationController?.setViewControllers([tabBarController], animated: true)
-                delegate?.loginControllerDidFinishChangingPassword()
-            } else {
-                self.view.makeToast("Пароль не соответсвует требованиям")
-            }
-        } else {
-            // Первый раз ввод пароля
-            loginView.passwordTextField.text = ""
-            loginView.actionButton.setTitle("Повторите пароль", for: .normal)
-            isCreatingPassword = true
-        }
-    }
 }
-
