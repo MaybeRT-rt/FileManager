@@ -23,8 +23,18 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupView()
+        
         updateButtonText()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        if passwordModel.getPassword() == nil {
+//
+//            PasswordManager.shared.startCreatingPassword()
+//        }
+//    }
     
     private func setupView() {
         view.addSubview(loginView.label)
@@ -34,7 +44,6 @@ class LoginController: UIViewController {
             
             loginView.label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
             loginView.label.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-           
             
             loginView.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             loginView.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
