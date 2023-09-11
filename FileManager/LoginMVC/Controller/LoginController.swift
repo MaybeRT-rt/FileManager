@@ -17,25 +17,25 @@ class LoginController: UIViewController {
     private let loginModel = LoginModel()
     private let passwordModel = PasswordModel.shared
     
-    private var isCreatingPassword = false
+    var isCreatingPassword = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupView()
+        testPass()
+    }
+    
+    func testPass() {
+        if passwordModel.getPassword() != nil {
+            isCreatingPassword = false
+        } else {
+            isCreatingPassword = true
+        }
         
         updateButtonText()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        if passwordModel.getPassword() == nil {
-//
-//            PasswordManager.shared.startCreatingPassword()
-//        }
-//    }
-    
+        
     private func setupView() {
         view.addSubview(loginView.label)
         view.addSubview(loginView.stackView)
@@ -67,6 +67,7 @@ class LoginController: UIViewController {
             passwordModel.savePassword(newPassword)
             isCreatingPassword = false
             updateButtonText()
+            delegate?.loginControllerDidFinishChangingPassword()
         } else {
             self.view.makeToast("Новый пароль не удовлетворяет требованиям (например, меньше 4 символов)")
         }
@@ -74,10 +75,10 @@ class LoginController: UIViewController {
     
     @objc private func loginButtonTapped() {
         let enteredPassword = loginView.passwordTextField.text ?? ""
-        
         if passwordModel.validatePassword(enteredPassword) {
             let tabBarController = TabBarController()
             navigationController?.setViewControllers([tabBarController], animated: true)
+            delegate?.loginControllerDidFinishChangingPassword()
         } else {
             self.view.makeToast("Введен неверный пароль")
         }
@@ -87,15 +88,18 @@ class LoginController: UIViewController {
         if isCreatingPassword {
             if let password = loginView.passwordTextField.text, password.count >= 4 {
                 passwordModel.savePassword(password)
+                let tabBarController = TabBarController()
+                navigationController?.setViewControllers([tabBarController], animated: true)
                 delegate?.loginControllerDidFinishChangingPassword()
-                dismiss(animated: true, completion: nil)
             } else {
-                self.view.makeToast("пароль не совпадает или меньше 4 символов")
+                self.view.makeToast("Пароль не соответсвует требованиям")
             }
         } else {
+            // Первый раз ввод пароля
             loginView.passwordTextField.text = ""
             loginView.actionButton.setTitle("Повторите пароль", for: .normal)
             isCreatingPassword = true
         }
     }
 }
+

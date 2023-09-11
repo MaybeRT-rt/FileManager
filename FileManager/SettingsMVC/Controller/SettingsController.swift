@@ -13,6 +13,7 @@ class SettingsController: UIViewController, FileModelDelegate {
     private let settingsView = SettingsView()
     private let settingsModel = SettingsModel()
     private let fileModel = FileModel()
+    private let passwordModel = PasswordModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,6 @@ class SettingsController: UIViewController, FileModelDelegate {
     }
     
     @objc func sortingSwitchValueChanged(sender: UISwitch) {
-        // Обновите значение сортировки и загрузите файлы после изменения переключателя
         SettingsModel.shared.isSortingEnabled = sender.isOn
         fileModel.loadFilesFromDocuments()
     }
@@ -82,13 +82,14 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
             PasswordManager.shared.startCreatingPassword()
             let loginController = LoginController()
             loginController.delegate = self
-            let navController = UINavigationController(rootViewController: loginController)
-            present(navController, animated: true, completion: nil)
+            loginController.modalPresentationStyle = .fullScreen // Установите стиль модальной презентации
+            present(loginController, animated: true, completion: nil)
         }
     }
 }
 
 extension SettingsController: LoginControllerDelegate {
     func loginControllerDidFinishChangingPassword() {
+        dismiss(animated: true, completion: nil)
     }
 }
